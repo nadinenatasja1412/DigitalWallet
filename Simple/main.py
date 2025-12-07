@@ -63,7 +63,7 @@ def main():
             break
         
         else :
-            print("Incorrect Choices. Select 1-4 : ")
+            print("Incorrect Choices\n")
 
 if __name__ == "__main__":
     main()
