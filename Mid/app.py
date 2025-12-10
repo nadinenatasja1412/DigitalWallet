@@ -1,10 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
 @app.route ('/')
-def homel():
-    return "Hello from Flask !"
+def home():
+    return render_template('index.html')
 
-if __name__ == '_main_':
+@app.route ('/login')
+def login():
+    return render_template('Login.html')
+
+@app.route ('/register')
+def register():
+    return render_template('register.html')
+
+if __name__ == '__main__':
     app.run(debug=True)
