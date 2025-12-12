@@ -1,6 +1,11 @@
 from flask import Flask, render_template, url_for
+from flask_sqlachemy import SQLAlchemy
+from flask_login import UserMixin
 
 app = Flask(__name__)
+db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SECRET_KEY'] = 'thisissecret'
 
 @app.route ('/')
 def home():
